@@ -1,3 +1,5 @@
+package com.simbirsoft.qaa.course;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -15,8 +17,7 @@ import java.awt.datatransfer.StringSelection;
 import java.awt.datatransfer.Transferable;
 import java.util.concurrent.TimeUnit;
 
-public class FirstTest {
-
+public class SecondClass {
     private static WebDriver driver;
 
     @BeforeMethod
@@ -57,7 +58,7 @@ public class FirstTest {
 
         String string2 = searchInputElement.getAttribute("value");
 
-        Assert.assertEquals(string1,string2);
+        Assert.assertEquals(string1, string2);
     }
     @AfterMethod
     public void after() {
