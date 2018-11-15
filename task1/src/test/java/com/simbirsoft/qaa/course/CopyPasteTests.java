@@ -27,7 +27,7 @@ public class CopyPasteTests {
     @Test
     public void copyButtonTest() throws UnsupportedFlavorException, IOException {
         driver.get("https://clipboardjs.com/");
-        WebElement copyButton = driver.findElement(By.xpath("//button[@data-clipboard-target='foo']"));
+        WebElement copyButton = driver.findElement(By.xpath("//span[@class='input-group-button']"));
         copyButton.click();
         WebElement textField = driver.findElement(By.xpath("//input[@id='foo']"));
         String fieldText = textField.getAttribute("value");
@@ -37,7 +37,7 @@ public class CopyPasteTests {
     }
 
     @Test
-    public void pasteFromClipBoardTest() {
+    public void pasteFromClipboardTest() {
         driver.get("https://google.com/");
         WebElement searchInputElement = driver.findElement(By.id("lst-ib"));
         String clipboardText = "This text will be copied into clipboard when running this code!";
