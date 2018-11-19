@@ -20,7 +20,7 @@ public class ClipboardJsPage {
     }
 
     public ClipboardJsPage clickCopyButton() {
-        WaitersHelper.useWhenVisible(driver, copyButton).click();
+        WaitersHelper.useWhenClickable(driver, copyButton).click();
         return this;
     }
 
