@@ -8,21 +8,24 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WaitersHelper {
 
-    private WebDriverWait wait;
+    private static long waitTime;
 
-    public WaitersHelper(WebDriver driver) {
-        wait = new WebDriverWait(driver, 10);
+    static {
+        waitTime = 10;
     }
 
-    public WebElement visibilityOfElementLocated(By selector) {
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(selector));
+    public static WebElement useWhenVisibleLocated(WebDriver driver, By selector) {
+        return (new WebDriverWait(driver, waitTime))
+                .until(ExpectedConditions.visibilityOfElementLocated(selector));
     }
 
-    public WebElement visibilityOf(WebElement webElement) {
-        return wait.until(ExpectedConditions.visibilityOf(webElement));
+    public static WebElement useWhenVisible(WebDriver driver, WebElement webElement) {
+        return (new WebDriverWait(driver, waitTime))
+                .until(ExpectedConditions.visibilityOf(webElement));
     }
 
-    public WebElement elementToBeClickable(WebElement webElement) {
-        return wait.until(ExpectedConditions.elementToBeClickable(webElement));
+    public static WebElement useWhenClickable(WebDriver driver, WebElement webElement) {
+        return (new WebDriverWait(driver, waitTime))
+                .until(ExpectedConditions.elementToBeClickable(webElement));
     }
 }

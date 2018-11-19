@@ -8,8 +8,6 @@ import org.openqa.selenium.support.PageFactory;
 
 public class ClipboardJsPage {
 
-    private WaitersHelper waiter;
-
     private WebDriver driver;
     @FindBy(xpath = "//span[@class='input-group-button']")
     private WebElement copyButton;
@@ -19,16 +17,15 @@ public class ClipboardJsPage {
     public ClipboardJsPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
-        waiter = new WaitersHelper(driver);
     }
 
     public ClipboardJsPage clickCopyButton() {
-        waiter.elementToBeClickable(copyButton).click();
+        WaitersHelper.useWhenVisible(driver, copyButton).click();
         return this;
     }
 
     public String getTextFromField() {
-        return waiter.visibilityOf(textField)
+        return WaitersHelper.useWhenVisible(driver, textField)
                 .getAttribute("value");
     }
 }

@@ -7,25 +7,22 @@ import org.openqa.selenium.WebDriver;
 
 public class GoogleMainPage {
 
-    private WaitersHelper waiter;
-
     private WebDriver driver;
 
     private By searchInputSelector = By.xpath("//input[@title='Поиск']");
 
     public GoogleMainPage(WebDriver driver) {
         this.driver = driver;
-        waiter = new WaitersHelper(driver);
     }
 
     public GoogleMainPage pasteToSearchField() {
-        waiter.visibilityOfElementLocated(searchInputSelector)
+        WaitersHelper.useWhenVisibleLocated(driver, searchInputSelector)
                 .sendKeys(Keys.CONTROL, "v");
         return this;
     }
 
     public String getTextFromSearchField() {
-        return waiter.visibilityOfElementLocated(searchInputSelector)
+        return WaitersHelper.useWhenVisibleLocated(driver, searchInputSelector)
                 .getAttribute("value");
     }
 
