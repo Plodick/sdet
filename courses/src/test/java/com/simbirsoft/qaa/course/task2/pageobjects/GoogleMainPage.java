@@ -1,14 +1,13 @@
 package com.simbirsoft.qaa.course.task2.pageobjects;
 
+import com.simbirsoft.qaa.course.task2.helpers.WaitersHelper;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class GoogleMainPage {
 
-    private WebDriverWait wait;
+    private WaitersHelper waiter;
 
     private WebDriver driver;
 
@@ -16,17 +15,17 @@ public class GoogleMainPage {
 
     public GoogleMainPage(WebDriver driver) {
         this.driver = driver;
-        wait = new WebDriverWait(driver, 10);
+        waiter = new WaitersHelper(driver);
     }
 
     public GoogleMainPage pasteToSearchField() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(searchInputSelector))
+        waiter.visibilityOfElementLocated(searchInputSelector)
                 .sendKeys(Keys.CONTROL, "v");
         return this;
     }
 
     public String getTextFromSearchField() {
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(searchInputSelector))
+        return waiter.visibilityOfElementLocated(searchInputSelector)
                 .getAttribute("value");
     }
 
