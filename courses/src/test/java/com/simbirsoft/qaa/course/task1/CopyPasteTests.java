@@ -1,4 +1,4 @@
-package com.simbirsoft.qaa.course;
+package com.simbirsoft.qaa.course.task1;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
