@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 public class CopyPasteTests {
+
     private static WebDriver driver;
 
     @BeforeMethod
@@ -39,7 +40,7 @@ public class CopyPasteTests {
     @Test
     public void pasteFromClipboardTest() {
         driver.get("https://google.com/");
-        WebElement searchInputElement = driver.findElement(By.id("lst-ib"));
+        WebElement searchInputElement = driver.findElement(By.xpath("//input[@title='Поиск']"));
         String clipboardText = "This text will be copied into clipboard when running this code!";
         StringSelection stringSelection = new StringSelection(clipboardText);
         Clipboard clipBoard = Toolkit.getDefaultToolkit().getSystemClipboard();
