@@ -12,7 +12,6 @@ import org.testng.annotations.Test;
 
 import java.awt.datatransfer.UnsupportedFlavorException;
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
 
 public class CopyPasteTests {
 
@@ -21,7 +20,6 @@ public class CopyPasteTests {
     @BeforeMethod
     public void beforeMethod() {
         driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
     }
 
     @Test
@@ -31,7 +29,7 @@ public class CopyPasteTests {
         String fieldText = clipboardJsPage
                 .clickCopyButton()
                 .getTextFromField();
-        Assert.assertEquals(fieldText, ClipboardHelper.StringFromClipboard());
+        Assert.assertEquals(fieldText, ClipboardHelper.getStringFromClipboard());
     }
 
     @Test
@@ -39,7 +37,7 @@ public class CopyPasteTests {
         driver.get("https://google.com/");
         GoogleMainPage googleMainPage = new GoogleMainPage(driver);
         String clipboardText = "This text will be copied into clipboard when running this code!";
-        ClipboardHelper.StringToClipboard(clipboardText);
+        ClipboardHelper.setStringToClipboard(clipboardText);
         String fieldText = googleMainPage
                 .pasteToSearchField()
                 .getTextFromSearchField();
