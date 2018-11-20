@@ -39,7 +39,7 @@ public class CopyPasteTests {
         String clipboardText = "This text will be copied into clipboard when running this code!";
         ClipboardHelper.setStringToClipboard(clipboardText);
         String fieldText = googleMainPage
-                .pasteToSearchField()
+                .pasteToSearchFieldFromClipboard()
                 .getTextFromSearchField();
         Assert.assertEquals(fieldText, clipboardText);
     }

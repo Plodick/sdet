@@ -15,7 +15,7 @@ public class GoogleMainPage {
         this.driver = driver;
     }
 
-    public GoogleMainPage pasteToSearchField() {
+    public GoogleMainPage pasteToSearchFieldFromClipboard() {
         WaitersHelper.useWhenVisibleLocated(driver, searchInputSelector)
                 .sendKeys(Keys.CONTROL, "v");
         return this;

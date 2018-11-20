@@ -8,11 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WaitersHelper {
 
-    private static long waitTime;
-
-    static {
-        waitTime = 10;
-    }
+    private static long waitTime = 10;
 
     public static WebElement useWhenVisibleLocated(WebDriver driver, By selector) {
         return (new WebDriverWait(driver, waitTime))
