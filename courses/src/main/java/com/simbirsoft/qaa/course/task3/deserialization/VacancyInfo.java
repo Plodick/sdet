@@ -3,12 +3,11 @@ package com.simbirsoft.qaa.course.task3.deserialization;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class VacancyEmployerInfo {
+public class VacancyInfo {
 
-    private String id;
+    private EmployerInfo employer;
 
-    public String getId() {
-        return this.id;
+    public EmployerInfo getEmployer() {
+        return this.employer;
     }
-
 }
