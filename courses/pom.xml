@@ -18,6 +18,15 @@
                 <suiteXmlFileName>task4</suiteXmlFileName>
             </properties>
         </profile>
+        <profile>
+            <id>task4grid</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <suiteXmlFileName>task4grid</suiteXmlFileName>
+            </properties>
+        </profile>
     </profiles>
     <build>
         <plugins>
