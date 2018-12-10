@@ -10,9 +10,18 @@
 
     <profiles>
         <profile>
-            <id>task4</id>
+            <id>basetest</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <suiteXmlFileName>basetest</suiteXmlFileName>
+            </properties>
+        </profile>
+        <profile>
+            <id>task4</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
                 <suiteXmlFileName>task4</suiteXmlFileName>
