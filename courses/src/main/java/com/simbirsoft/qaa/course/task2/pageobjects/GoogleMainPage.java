@@ -17,7 +17,7 @@ public class GoogleMainPage {
 
     public GoogleMainPage pasteToSearchFieldFromClipboard() {
         WaitersHelper.waitUntilVisibleLocated(driver, searchInputSelector)
-                .sendKeys(Keys.CONTROL, "v");
+                .sendKeys(Keys.CONTROL+"v");
         return this;
     }
 
