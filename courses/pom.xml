@@ -12,10 +12,19 @@
         <profile>
             <id>basetest</id>
             <activation>
-                <activeByDefault>true</activeByDefault>
+                <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
                 <suiteXmlFileName>basetest</suiteXmlFileName>
+            </properties>
+        </profile>
+        <profile>
+            <id>testapi</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <suiteXmlFileName>testapi</suiteXmlFileName>
             </properties>
         </profile>
         <profile>
