@@ -40,7 +40,7 @@ public class CopyPasteTests {
     @Test
     public void pasteFromClipboardTest() {
         driver.get("https://google.com/");
-        WebElement searchInputElement = driver.findElement(By.xpath("//input[@title='Поиск']"));
+        WebElement searchInputElement = driver.findElement(By.xpath("//input[@type='text']"));
         String clipboardText = "This text will be copied into clipboard when running this code!";
         StringSelection stringSelection = new StringSelection(clipboardText);
         Clipboard clipBoard = Toolkit.getDefaultToolkit().getSystemClipboard();
