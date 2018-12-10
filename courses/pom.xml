@@ -19,9 +19,18 @@
             </properties>
         </profile>
         <profile>
-            <id>testapi</id>
+            <id>covertest</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <suiteXmlFileName>covertest</suiteXmlFileName>
+            </properties>
+        </profile>
+        <profile>
+            <id>testapi</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
                 <suiteXmlFileName>testapi</suiteXmlFileName>
