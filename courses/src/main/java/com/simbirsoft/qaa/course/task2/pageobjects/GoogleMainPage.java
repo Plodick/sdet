@@ -9,7 +9,7 @@ public class GoogleMainPage {
 
     private WebDriver driver;
 
-    private By searchInputSelector = By.xpath("//input[@title='Поиск']");
+    private By searchInputSelector = By.xpath("//input[@type='text']");
 
     public GoogleMainPage(WebDriver driver) {
         this.driver = driver;
